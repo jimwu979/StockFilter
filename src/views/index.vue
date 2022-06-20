@@ -130,7 +130,7 @@ export default {
   computed: {
     axios(){
       return require('axios').default;
-    }
+    },
   },
   created(){
     this.init()
@@ -234,6 +234,7 @@ export default {
       }
     },
     getStockCode () {
+      // console.log('getStockCode');
       this.stockCode.isLoading = true;
       let _this = this;
       let lastCompany = 9999;

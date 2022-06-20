@@ -13,3 +13,21 @@
 //         }
 //     }
 // }
+
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
+  transpileDependencies: true,
+  devServer: {
+    port: 3001,
+    proxy: {
+      '/api': {
+        target: 'https://openapi.twse.com.tw/v1',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    }
+  }
+})
+
